@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Albums - Galactic Memories</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Adjusted path -->
     <style>
         body {
             margin: 0;
@@ -18,10 +18,16 @@
         #main-header {
             background-color: rgba(0, 0, 0, 0.7);
             padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
         nav ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
         nav ul li {
             display: inline;
@@ -30,17 +36,19 @@
         nav ul li a {
             color: white;
             text-decoration: none;
+            font-size: 1.2em;
         }
         .albums-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 80px 20px 20px; /* Added padding to avoid overlap with fixed header */
         }
         .album-item {
             background: rgba(0, 0, 0, 0.7);
             border-radius: 8px;
             overflow: hidden;
+            position: relative; /* Required for overlay positioning */
         }
         .album-cover img {
             width: 100%;
@@ -113,11 +121,4 @@
                     <div class="album-overlay"><span>42 photos</span></div>
                 </div>
                 <div class="album-info">
-                    <h3>Galaxies</h3>
-                    <p>A collection of spiral and elliptical galaxies</p>
-                </div>
-            </div>
-            <div class="album-item">
-                <div class="album-cover">
-                    <img src="https://source.unsplash.com/random/400x400/?nebula" alt="Nebulae Album">
-                    <div class="album-overlay"><span>28
+                    <h3
