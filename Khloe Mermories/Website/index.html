@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Galactic Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://images.hdqwalls.com/download/nebula-planet-space-2n-3840x2400.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            overflow-x: hidden;
+        }
+        #main-header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            transition: top 0.3s;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .admin-section {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            margin: 20px;
+            display: none; /* Initially hidden */
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .gallery {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="albums.html">Albums</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="admin-section" id="adminPrompt">
+            <h2>Admin Login</h2>
+            <form id="adminForm">
+                <div class="form-group">
+                    <label for="usernameInput">Username</label>
+                    <input type="text" id="usernameInput" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="passwordInput">Password</label>
+                    <input type="password" id="passwordInput" placeholder="Enter password" required>
+                </div>
+                <button type="submit">View Gallery</button>
+            </form>
+            <div id="galleryDisplay" class="gallery"></div>
+        </section>
+    </main>
+    <script src="../../scripts/scripts.js"></script>
+    <script>
+        // JavaScript for scroll behavior and admin prompt
+        let lastScrollTop = 0;
+        const header = document.getElementById('main-header');
+        const adminPrompt = document.getElementById('adminPrompt');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Show/hide header based on scroll direction
+            if (scrollTop > lastScrollTop) {
+                header.style.top =                header.style.top = "-60px"; // Hide header
+            } else {
+                header.style.top = "0"; // Show header
+            }
+            lastScrollTop = scrollTop;
+
+            // Show admin prompt when reaching the bottom of the page
+            if (scrollTop + window.innerHeight >= document.documentElement.scrollHeight) {
+                adminPrompt.style.display = 'block'; // Show admin prompt
+            } else {
+                adminPrompt.style.display = 'none'; // Hide admin prompt when not at the bottom
+            }
+        });
+
+        // Handle admin form submission
+        document.getElementById('adminForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const username = document.getElementById('usernameInput').value;
+            const password = document.getElementById('passwordInput').value;
+
+            // Here you can add your logic to validate the username and password
+            // For demonstration, we'll just log them to the console
+            console.log('Username:', username);
+            console.log('Password:', password);
+
+            // Optionally, you can display the gallery or redirect to another page
+            // For now, we'll just clear the form
+            document.getElementById('adminForm').reset();
+            adminPrompt.style.display = 'none'; // Hide the admin prompt after submission
+        });
+    </script>
+</body>
+</html>

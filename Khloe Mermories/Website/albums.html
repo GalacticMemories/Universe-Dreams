@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albums - Galactic Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://static.tweaktown.com/news/8/8/88893_02_scientists_release_map_showing_the_true_age_and_size_of_universe_full.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        #main-header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .album-item {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .album-cover img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .album-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .album-item:hover .album-overlay {
+            opacity: 1;
+        }
+        .album-info {
+            padding: 10px;
+        }
+        .album-actions {
+            padding: 20px;
+            text-align: center;
+        }
+        .create-album {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .toggle-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-button" aria-label="Toggle Header">☀</button>
+    <header id="main-header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="albums.html" class="active">Albums</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="albums-grid">
+            <div class="album-item">
+                <div class="album-cover">
+                    <img src="https://source.unsplash.com/random/400x400/?galaxy" alt="Galaxies Album">
+                    <div class="album-overlay"><span>42 photos</span></div>
+                </div>
+                <div class="album-info">
+                    <h3>Galaxies</h3>
+                    <p>A collection of spiral and elliptical galaxies</p>
+                </div>
+            </div>
+            <div class="album-item">
+                <div class="album-cover">
+                    <img src="https://source.unsplash.com/random/400x400/?nebula" alt="Nebulae Album">
+                    <div class="album-overlay"><span>28

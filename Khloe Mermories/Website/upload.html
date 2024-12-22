@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - Galactic Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://img.freepik.com/free-photo/space-background-with-stardust-shining-stars-realistic-colorful-cosmos-with-nebula-milky-way_1258-150921.jpg?w=2000');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        #main-header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .upload-section {
+            padding: 20px;
+        }
+        .upload-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+        }
+        .preview-item {
+            position: relative;
+        }
+        .preview-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .preview-info {
+            text-align: center;
+            margin-top: 5px;
+        }
+        .toggle-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-button" aria-label="Toggle Header">☀</button>
+    <header id="main-header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="albums.html">Albums</a></li>
+                <li><a href="upload.html" class="active">Upload</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="upload-section">
+            <div class="upload-container">
+                <h2>Upload Your Space Photos</h2>
+                <div class="upload-area" id="dropZone">
+                    <div class="upload-icon">📸</div>
+                    <p>Drag and drop photos here</p>
+                    <p>or</p>
+                    <label for="fileInput" class="upload-button">Choose Files</label>
+                    <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+                </div>
+                <div class="upload-options">
+                    <div class="option-group">
+                        <label>Select Album:</label>
+                        <select id="albumSelect">
+                            <option value="">Create New Album</option>
+                            <option value="galaxies">Galaxies</option>
+                            <option value="nebulae">Nebulae</option>
+                            <option value="planets">Planets</option>
+                            <option value="moons">Moons</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label>Privacy:</label>
+                        <select id="privacySelect">
+                            <option value="private">Private</option>
+                            <option value="public">Public</option>
+                            <option value="shared">Shared</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="upload-preview">
+                    <
