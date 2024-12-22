@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galactic Memories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Adjusted path -->
     <style>
         body {
             margin: 0;
@@ -117,6 +119,48 @@
             border: none;
             cursor: pointer;
         }
+
+        /* Albums Section */
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .album-item {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative; /* Required for overlay positioning */
+        }
+
+        .album-cover img {
+            width: 100%;
+            height: auto;
+            display
+                        display: block;
+        }
+
+        .album-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .album-item:hover .album-overlay {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -126,71 +170,48 @@
         <h1 id="title">Galactic Memories</h1>
         <nav>
             <ul>
-                <li><a href="https://galacticmemories.github.io/Galactic-Memories/index.html" target="_self">Home</a></li>
-                <li><a href="https://galacticmemories.github.io/Galactic-Memories/albums.html" target="_self">Albums</a></li>
-                <li><a href="https://galacticmemories.github.io/Galactic-Memories/photos.html"
-                                <li><a href="https://galacticmemories.github.io/Galactic-Memories/photos.html" target="_self">Photos</a></li>
-                <li><a href="https://galacticmemories.github.io/Galactic-Memories/account.html" target="_self">Account</a></li>
-                <li><a href="https://galacticmemories.github.io/Galactic-Memories/upload.html" target="_self">Upload</a></li>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('albums')">Albums</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="upload.html">Upload</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Description</h2>
-        <p>Galactic Memories is an innovative web application designed to help users effortlessly create, manage, and share their photo albums. The platform serves as a digital scrapbook, allowing users to store and organize their cherished memories in a visually appealing and user-friendly environment.</p>
-        
-        <p>Upon entering the site, users are greeted with a stunning cosmic-themed background that sets the tone for a journey through their personal memories. The interface is clean and intuitive, making navigation simple for users of all ages. The homepage features a prominent title, "Galactic Memories," and a navigation menu that provides easy access to various functionalities, including:</p>
-        
-        <div class="feature">
-            <h3>1. User Account Management</h3>
-            <p>Users can create and manage their accounts, ensuring that their personal information and galleries are secure. This feature allows for a personalized experience, where users can easily access their albums and settings.</p>
-        </div>
+        <!-- Home Section -->
+        <section id="home" class="home-section">
+            <h2>Description</h2>
+            <p>Galactic Memories is an innovative web application designed to help users effortlessly create, manage, and share their photo albums. The platform serves as a digital scrapbook, allowing users to store and organize their cherished memories in a visually appealing and user-friendly environment.</p>
+            <p>Upon entering the site, users are greeted with a stunning cosmic-themed background that sets the tone for a journey through their personal memories. The interface is clean and intuitive, making navigation simple for users of all ages.</p>
+            <!-- Additional content can be added here -->
+        </section>
 
-        <div class="feature">
-            <h3>2. Upload Photos to Albums</h3>
-            <p>The upload process is designed to be seamless, allowing users to select and upload multiple images at once from their devices. This feature ensures that adding new memories is quick and efficient, enabling users to keep their albums up to date.</p>
-        </div>
-
-        <div class="feature">
-            <h3>3. View and Share Albums</h3>
-            <p>Users can create multiple albums, each serving as a unique collection of photos. The application encourages sharing, allowing users to share their albums with friends and family, fostering connections and allowing loved ones to experience their memories.</p>
-        </div>
-
-        <div class="feature">
-            <h3>4. Access to Other Users' Galleries</h3>
-            <p>The application includes an admin feature that enables authorized users to access other users' galleries. This ensures that the platform remains secure while allowing for collaborative sharing among trusted users.</p>
-        </div>
-
-        <div class="feature">
-            <h3>5. Mobile Accessibility</h3>
-            <p>The site incorporates responsive design, ensuring that it functions beautifully on both desktop and mobile devices. Mobile users are prompted to create a copy of their gallery, enhancing accessibility and convenience.</p>
-        </div>
-
-        <div class="feature">
-            <h3>6. Admin Access</h3>
-            <p>Authorized users can access other users' galleries by entering a password. This feature ensures that sensitive information is protected while allowing for collaborative sharing.</p>
-        </div>
-
-        <div class="feature">
-            <h3>7. User-Friendly Interface</h3>
-            <p>The interface is designed to be user-friendly, with clear navigation and easy access to all features. Users can quickly find what they need without confusion.</p>
-        </div>
-
-        <div class="feature">
-            <h3>8. Cosmic Theme</h3>
-            <p>The cosmic theme adds a unique touch to the application, making it visually appealing and engaging for users. The background and design elements create an immersive experience.</p>
-        </div>
-
-        <div class="feature">
-            <h3>9. Security Features</h3>
-            <p>Security is a top priority, with measures in place to protect user data and ensure that only authorized users can access sensitive information.</p>
-        </div>
-
-        <div class="feature">
-            <h3>10. Community Engagement</h3>
-            <p>The platform encourages community engagement by allowing users to share their albums and memories with others, fostering a sense of connection and belonging.</p>
-        </div>
+        <!-- Albums Section -->
+        <section id="albums" class="albums-grid" style="display: none;">
+            <div class="album-item">
+                <div class="album-cover">
+                    <img src="https://source.unsplash.com/random/400x400/?galaxy" alt="Galaxies Album">
+                    <div class="album-overlay"><span>42 photos</span></div>
+                </div>
+                <div class="album-info">
+                    <h3>Galaxies</h3>
+                    <p>A collection of spiral and elliptical galaxies</p>
+                </div>
+            </div>
+            <div class="album-item">
+                <div class="album-cover">
+                    <img src="https://source.unsplash.com/random/400x400/?nebula" alt="Nebula Album">
+                    <div class="album-overlay"><span>30 photos</span></div>
+                </div>
+                <div class="album-info">
+                    <h3>Nebulae</h3>
+                    <p>Beautiful images of various nebulae</p>
+                </div>
+            </div>
+            <!-- Add more album items as needed -->
+        </section>
 
         <div class="admin-prompt" id="adminPrompt">
             <h3>Admin Access</h3>
@@ -198,7 +219,7 @@
             <input type="password" id="adminPassword" placeholder="Enter password">
             <button onclick="checkAdminPassword()">Submit</button>
             <button onclick="closeAdminPrompt()">Cancel</button>
-                    </div>
+        </div>
 
         <div class="black-box" id="blackBox">
             <p>Made by Daddy</p>
@@ -223,8 +244,7 @@
                 if (blackBox.style.display === "block") {
                     blackBox.style.display = "block"; // Keep black box visible
                 }
-            }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+                       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
         });
 
         function toggleBlackBox() {
@@ -250,6 +270,19 @@
 
         function closeAdminPrompt() {
             adminPrompt.style.display = "none"; // Hide admin prompt
+        }
+
+        function showSection(section) {
+            const homeSection = document.getElementById("home");
+            const albumsSection = document.getElementById("albums");
+
+            if (section === 'home') {
+                homeSection.style.display = 'block';
+                albumsSection.style.display = 'none';
+            } else if (section === 'albums') {
+                homeSection.style.display = 'none';
+                albumsSection.style.display = 'grid'; // Use grid display for albums
+            }
         }
 
         // Mobile prompt for gallery copy
