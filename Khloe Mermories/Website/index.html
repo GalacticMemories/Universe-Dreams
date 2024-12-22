@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Galactic Memories</title>
+    <title>Galactic Memories</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Adjusted path -->
     <style>
         body {
             margin: 0;
@@ -83,7 +83,18 @@
             </ul>
         </nav>
     </header>
+
     <main>
+        <section class="hero">
+            <h1>Store and organize your intergalactic memories</h1>
+        </section>
+
+        <section id="dynamicPhotos">
+            <div class="photo-slot"></div>
+            <div class="photo-slot"></div>
+            <div class="photo-slot"></div>
+        </section>
+
         <section class="admin-section" id="adminPrompt">
             <h2>Admin Login</h2>
             <form id="adminForm">
@@ -100,7 +111,8 @@
             <div id="galleryDisplay" class="gallery"></div>
         </section>
     </main>
-    <script src="../../scripts/scripts.js"></script>
+
+    <script src="scripts/scripts.js"></script> <!-- Adjusted path -->
     <script>
         // JavaScript for scroll behavior and admin prompt
         let lastScrollTop = 0;
@@ -110,39 +122,4 @@
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            // Show/hide header based on scroll direction
-            if (scrollTop > lastScrollTop) {
-                header.style.top =                header.style.top = "-60px"; // Hide header
-            } else {
-                header.style.top = "0"; // Show header
-            }
-            lastScrollTop = scrollTop;
-
-            // Show admin prompt when reaching the bottom of the page
-            if (scrollTop + window.innerHeight >= document.documentElement.scrollHeight) {
-                adminPrompt.style.display = 'block'; // Show admin prompt
-            } else {
-                adminPrompt.style.display = 'none'; // Hide admin prompt when not at the bottom
-            }
-        });
-
-        // Handle admin form submission
-        document.getElementById('adminForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            const username = document.getElementById('usernameInput').value;
-            const password = document.getElementById('passwordInput').value;
-
-            // Here you can add your logic to validate the username and password
-            // For demonstration, we'll just log them to the console
-            console.log('Username:', username);
-            console.log('Password:', password);
-
-            // Optionally, you can display the gallery or redirect to another page
-            // For now, we'll just clear the form
-            document.getElementById('adminForm').reset();
-            adminPrompt.style.display = 'none'; // Hide the admin prompt after submission
-        });
-    </script>
-</body>
-</html>
+            // Show/hide header based
